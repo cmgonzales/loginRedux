@@ -1,7 +1,14 @@
 import React, {useState} from 'react'
+import { useSelector, useDispatch } from "react-redux";
 
 
 const Login = () => {
+
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+  
+
+
 
     const[input, newInput] = useState('')
     const [name, newName] = useState('')
@@ -14,9 +21,9 @@ const handleChange = (e) =>{
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('test')
+    
 
-    newName(input)
+    dispatch()
 }
 
   return (
