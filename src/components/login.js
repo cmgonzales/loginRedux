@@ -1,29 +1,27 @@
 import React, {useState} from 'react'
+import { user } from './actions'
 import { useSelector, useDispatch } from "react-redux";
+
 
 
 const Login = () => {
 
-    const user = useSelector((state) => state.user);
+    const users = useSelector((state) => state.user);
     const dispatch = useDispatch();
   
-
-
-
-    const[input, newInput] = useState('')
-    const [name, newName] = useState('')
+    const[name, newName] = useState('')
+    
 
 
 const handleChange = (e) =>{
     e.preventDefault()
-    newInput(e.target.value)
+    newName(e.target.value)
 }    
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    
-
-    dispatch()
+    dispatch(user(name))
+    console.log(name)
 }
 
   return (
@@ -33,13 +31,13 @@ const handleSubmit = (e) => {
           Name:
           <input
             type="text"
-            value = {input}
+            value = {name}
             onChange={handleChange}
           />
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <h1>{name}</h1>
+     <h1>{users}</h1>
     </div>
   );
 }
