@@ -1,12 +1,12 @@
-import { SEE_CRIMES } from "./crimeTypes";
+import {ADD_USER} from './actions';
 
 const initialState = {
-  name,
+  name: ''
 };
 
 const crimesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SEE_CRIMES:
+    case ADD_USER:
       return {
         crimes: action.payload,
       };
