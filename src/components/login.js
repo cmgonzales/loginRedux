@@ -2,16 +2,12 @@ import React, {useState} from 'react'
 import { user } from './actions'
 import { useSelector, useDispatch } from "react-redux";
 
-
-
 const Login = () => {
 
     const users = useSelector((state) => state.user);
     const dispatch = useDispatch();
   
     const[name, newName] = useState('')
-    
-
 
 const handleChange = (e) =>{
     e.preventDefault()
