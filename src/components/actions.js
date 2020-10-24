@@ -1,8 +1,8 @@
 import { ADD_USER } from './userType';
 
-export const user = (name) => {
+export const user = (names) => {
   return {
     type: ADD_USER,
-    payload: name,
+    payload: names,
   };
 };
